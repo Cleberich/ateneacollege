@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/firebase.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1755749246758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1755749246758,
+            "name": "Commit-0",
+            "content": "// lib/firebase.js\nimport { initializeApp } from \"firebase/app\";\nimport { getAuth } from \"firebase/auth\";\nimport { getFirestore } from \"firebase/firestore\";\nimport { getStorage } from \"firebase/storage\";\n\nconst firebaseConfig = {\n  apiKey: \"AIzaSyCkUe_yltznxTGk5WqykDqlcB3HB8Zx1sU\",\n  authDomain: \"atenea-f7093.firebaseapp.com\",\n  projectId: \"atenea-f7093\",\n  storageBucket: \"atenea-f7093.firebasestorage.app\",\n  messagingSenderId: \"691085802860\",\n  appId: \"1:691085802860:web:6a3a9964c7af7d94b60749\",\n  measurementId: \"G-K9QSCKL901\",\n};\n\nconst app = initializeApp(firebaseConfig);\nexport const auth = getAuth(app);\nexport const db = getFirestore(app);\nexport const storage = getStorage(app);\n"
+        }
+    ]
+}

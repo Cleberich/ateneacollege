@@ -1,0 +1,22 @@
+{
+    "sourceFile": "styles/globals.css.bak",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1755745437252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1755745453913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+@import \"tailwindcss\";\n+\n+:root {\n+  --background: #ffffff;\n+  --foreground: #171717;\n+}\n+\n+@media (prefers-color-scheme: dark) {\n+  :root {\n+    --background: #0a0a0a;\n+    --foreground: #ededed;\n+  }\n+}\n+\n+body {\n+  background: var(--background);\n+  color: var(--foreground);\n+  font-family: Arial, Helvetica, sans-serif;\n+}\n+\n+html {\n+  scroll-behavior: smooth;\n+}\n+\n+.bg-atenea {\n+  background-color: #51016d;\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1755745437252,
+            "name": "Commit-0",
+            "content": "@import \"tailwindcss\";\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nbody {\n  background: var(--background);\n  color: var(--foreground);\n  font-family: Arial, Helvetica, sans-serif;\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\n.bg-atenea {\n  background-color: #51016d;\n}"
+        }
+    ]
+}
