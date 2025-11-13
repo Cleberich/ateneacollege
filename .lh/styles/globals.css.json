@@ -1,0 +1,42 @@
+{
+    "sourceFile": "styles/globals.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1762995412950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1762995428239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   }\n }\n \n body {\n-  background: var(--background);\n+  background: #ffffff;\n   color: var(--foreground);\n   font-family: Arial, Helvetica, sans-serif;\n }\n \n"
+                },
+                {
+                    "date": 1762995436287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   }\n }\n \n body {\n-  background: #ffffff;\n+  background: #ededed;\n   color: var(--foreground);\n   font-family: Arial, Helvetica, sans-serif;\n }\n \n"
+                },
+                {
+                    "date": 1762995452048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n \n .bg-atenea {\n   background-color: #51016d;\n }\n-h1, h2, h3, h4, h5, h6 {\n+h1, h2, h3, h4, h5, h6, p{\n   color: #0a0a0a;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1762995462599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n \n .bg-atenea {\n   background-color: #51016d;\n }\n-h1, h2, h3, h4, h5, h6, p{\n+h1, h2, h3, h4, h5, h6, p, span{\n   color: #0a0a0a;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1762997072923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,8 @@\n   background-color: #51016d;\n }\n h1, h2, h3, h4, h5, h6, p{\n   color: #0a0a0a;\n+}\n+placeholder{\n+  color: #000000;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1762997083520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,4 @@\n }\n h1, h2, h3, h4, h5, h6, p{\n   color: #0a0a0a;\n }\n-.placeholder{\n-  color: #000000;\n-}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1762995412950,
+            "name": "Commit-0",
+            "content": "@import \"tailwindcss\";\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nbody {\n  background: var(--background);\n  color: var(--foreground);\n  font-family: Arial, Helvetica, sans-serif;\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\n.bg-atenea {\n  background-color: #51016d;\n}\nh1, h2, h3, h4, h5, h6 {\n  color: #0a0a0a;\n}"
+        }
+    ]
+}

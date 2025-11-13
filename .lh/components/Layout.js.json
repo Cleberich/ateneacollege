@@ -1,0 +1,22 @@
+{
+    "sourceFile": "components/Layout.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1755826847225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1755827966504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,39 +1,40 @@\n-// components/Layout.js\n+// components/AuthenticatedLayout.js\n import { useAuthState } from \"react-firebase-hooks/auth\";\n-import { auth, db } from \"../lib/firebase\";\n+import { auth } from \"../lib/firebase\";\n import { useEffect, useState } from \"react\";\n import { doc, getDoc } from \"firebase/firestore\";\n+import { db } from \"../lib/firebase\";\n import Navbar from \"./Navbar\";\n+import { useRouter } from \"next/router\";\n \n-export default function Layout({ children }) {\n-  const [user, loading] = useAuthState(auth);\n+export default function AuthenticatedLayout({ children }) {\n+  const [user] = useAuthState(auth);\n+  const router = useRouter();\n   const [userData, setUserData] = useState(null);\n+  const [loading, setLoading] = useState(true);\n \n   useEffect(() => {\n     const fetchUserData = async () => {\n       if (user) {\n         try {\n           const userDocRef = doc(db, \"users\", user.uid);\n           const userDocSnap = await getDoc(userDocRef);\n-          if (userDocSnap.exists()) {\n-            setUserData(userDocSnap.data());\n-          }\n+          setUserData(userDocSnap.exists() ? userDocSnap.data() : null);\n         } catch (err) {\n-          console.error(\"Error al cargar datos del usuario:\", err);\n+          console.error(\"Error al cargar usuario:\", err);\n         }\n-      } else {\n-        setUserData(null);\n       }\n+      setLoading(false);\n     };\n \n     fetchUserData();\n   }, [user]);\n \n-  // Mostrar carga solo si está autenticando\n+  // No bloqueamos aquí, lo hace la página\n   if (loading) {\n     return (\n-      <div className=\"flex items-center justify-center min-h-screen bg-gray-50\">\n+      <div className=\"flex items-center justify-center min-h-screen\">\n         <p>Cargando...</p>\n       </div>\n     );\n   }\n"
+                }
+            ],
+            "date": 1755826847225,
+            "name": "Commit-0",
+            "content": "// components/Layout.js\nimport { useAuthState } from \"react-firebase-hooks/auth\";\nimport { auth, db } from \"../lib/firebase\";\nimport { useEffect, useState } from \"react\";\nimport { doc, getDoc } from \"firebase/firestore\";\nimport Navbar from \"./Navbar\";\n\nexport default function Layout({ children }) {\n  const [user, loading] = useAuthState(auth);\n  const [userData, setUserData] = useState(null);\n\n  useEffect(() => {\n    const fetchUserData = async () => {\n      if (user) {\n        try {\n          const userDocRef = doc(db, \"users\", user.uid);\n          const userDocSnap = await getDoc(userDocRef);\n          if (userDocSnap.exists()) {\n            setUserData(userDocSnap.data());\n          }\n        } catch (err) {\n          console.error(\"Error al cargar datos del usuario:\", err);\n        }\n      } else {\n        setUserData(null);\n      }\n    };\n\n    fetchUserData();\n  }, [user]);\n\n  // Mostrar carga solo si está autenticando\n  if (loading) {\n    return (\n      <div className=\"flex items-center justify-center min-h-screen bg-gray-50\">\n        <p>Cargando...</p>\n      </div>\n    );\n  }\n\n  return (\n    <>\n      <Navbar user={user} userData={userData} />\n      <main>{children}</main>\n    </>\n  );\n}\n"
+        }
+    ]
+}
